@@ -1,0 +1,9 @@
+{
+    "path" : "~/DataScience/R/RealEstateSalePrices",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

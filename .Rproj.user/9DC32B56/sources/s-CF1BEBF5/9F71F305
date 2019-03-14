@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552043510620.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9F71F305",
+    "lastKnownWriteTime" : 1552153486,
+    "last_content_update" : 1552153486,
+    "path" : "~/DataScience/R/RealEstateSalePrices/code2.R",
+    "project_path" : "code2.R",
+    "properties" : {
+        "cursorPosition" : "26,2",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

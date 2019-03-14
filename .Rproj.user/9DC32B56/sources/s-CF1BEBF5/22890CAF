@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552123039955.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "22890CAF",
+    "lastKnownWriteTime" : 1552394849,
+    "last_content_update" : 1552394996630,
+    "path" : "~/DataScience/R/RealEstateSalePrices/preProcessed.R",
+    "project_path" : "preProcessed.R",
+    "properties" : {
+        "cursorPosition" : "21,10",
+        "scrollLine" : "15",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
