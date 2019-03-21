@@ -12,6 +12,11 @@ library(plotly)
 library(naniar)
 library(dplyr)
 library(caret)
+library(doParallel)
+library(foreach)
+library(plyr)
+cl <- makeCluster(6)  # Use 6 cores
+registerDoParallel(cl) # register these 6 cores with the "foreach" package
 
 #Loading the data in to a variable
 dataset = read.csv("data.csv",sep = ",",stringsAsFactors = TRUE)
@@ -68,7 +73,6 @@ final <-
     RESIDENTIAL.UNITS,
     COMMERCIAL.UNITS,
     TOTAL.UNITS,
-    YEAR.BUILT,
     SALE.PRICE))
 #final2 %>% filter(as.numeric(final.SALE.PRICE)<=100000) %>% nrow()
 set.seed(1000)  # setting seed to reproduce results of random sampling
@@ -79,7 +83,7 @@ dim(trainingData)
 dim(testData)
 anyNA(final)#it return's TRUE, if there exists any NA's and returned TRUE
 summary(final)# this gives aggregate function on each column and NA's if exists
-trctrl<-trainControl(method = "repeatedcv", number = 10, repeats = 3)
+trctrl<-trainControl(method = "repeatedcv", number = 10, repeats = 3, allowParallel = TRUE)
 svmLinear1 <-train(as.numeric(SALE.PRICE) ~ ., data = trainingData, method = "svmLinear",
                   trControl =trctrl,
                   preProcess= c("center","scale"),
@@ -94,9 +98,12 @@ dim(trainingData2)
 dim(testData2)
 anyNA(trainingData2)#it return's TRUE, if there exists any NA's and returned TRUE
 summary(trainingData2)# this gives aggregate function on each column and NA's if exists
-trctrl2<-trainControl(method = "repeatedcv", number = 10, repeats = 3)
+trctrl2<-trainControl(method = "repeatedcv", number = 10, repeats = 3,allowParallel = TRUE)
 svmLinear <-train(as.numeric(SALE.PRICE) ~ ., data = trainingData2, method = "svmLinear",
                   trControl =trctrl2,
                   preProcess= c("center","scale"),
                   tuneLength = 10)
+#linux file PAth to save our model
+#save(svmLinear,file ='~/Documents/DataScience/R/RProjects/RealEstateSalePrices/SVMmodel.rda')
+#windows file path to save our model
 #save(svmLinear, file = "C:/Users/Scientist/Desktop/svmLinear.rda")
